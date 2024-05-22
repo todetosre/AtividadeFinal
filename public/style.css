@@ -1,0 +1,26 @@
+html{
+    scroll-behavior: smooth;
+    background: url(../public/CSS/background.png), linear-gradient(to right, rgba(0, 126, 174, .85), rgba(26, 193, 187, .85)); 
+}
+
+.jogador{
+    position: absolute;
+    top: 150px;
+    left: 485px;
+    width: 400px;
+    height: 450px;
+    background-color: #ffff;
+    border-radius: 1%;
+    border: 2px solid black;
+}
+
+.placar{
+    position: absolute;
+    top: 150px;
+    left: 950px;
+    width: 300px;
+    height: 450px;
+    background-color: #ffff;
+    border-radius: 1%;
+    border: 2px solid black;
+}

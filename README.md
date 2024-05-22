@@ -11,7 +11,6 @@ Este é um jogo de quiz em tempo real que utiliza WebSocket para comunicação e
 ### Instalação:
 
 1º Clone o repositório do Git utilizando o link: https://github.com/todetosre/AtividadeFinal.git;
-2º 
 
 #### Iniciar:
 - Utilize o comando "npm start" no terminal para iniciar o servidor.

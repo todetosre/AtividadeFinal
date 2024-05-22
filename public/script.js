@@ -2,7 +2,6 @@ const ws = new WebSocket('ws://localhost:3000');
 
 ws.onopen = () => {
   console.log('Conectado ao servidor WebSocket');
-  ws.send(JSON.stringify({ type: 'connection', message: 'Cliente conectado!' }));
 };
 
 ws.onmessage = (event) => {
