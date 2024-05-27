@@ -1,0 +1,602 @@
+[
+  {
+    "question": "Qual é a capital da França?",
+    "options": [
+      "Paris",
+      "Roma",
+      "Londres",
+      "Lisboa",
+      "Madri",
+      "Berlim"
+    ],
+    "correctOption": "Paris"
+  },
+  {
+    "question": "Qual é a capital do Brasil?",
+    "options": [
+      "Rio de Janeiro",
+      "Ivinhema",
+      "Salvador",
+      "São Paulo",
+      "Belo Horizonte",
+      "Brasília"
+    ],
+    "correctOption": "Brasília"
+  },
+  {
+    "question": "Qual é a capital do Canadá?",
+    "options": [
+      "Montreal",
+      "Ottawa",
+      "Hamilton",
+      "Vancouver",
+      "Toronto",
+      "Calgary"
+    ],
+    "correctOption": "Ottawa"
+  },
+  {
+    "question": "Qual é o elemento químico mais abundante na crosta terrestre?",
+    "options": [
+      "Cálcio",
+      "Magnésio",
+      "Ferro",
+      "Oxigênio",
+      "Silício",
+      "Alumínio"
+    ],
+    "correctOption": "Oxigênio"
+  },
+  {
+    "question": "Qual é o maior rio do mundo em volume de água?",
+    "options": [
+      "Rio Atântico",
+      "Rio Nilo",
+      "Rio Yangtze",
+      "Rio Ganges",
+      "Rio Mississippi",
+      "Rio Amazonas"
+    ],
+    "correctOption": "Rio Amazonas"
+  },
+  {
+    "question": "Quem pintou a famosa obra 'Mona Lisa'?",
+    "options": [
+      "Leonardo diCaprio",
+      "Vincent van Gogh",
+      "Leonardo da Vinci",
+      "Michelangelo",
+      "Claude Monet",
+      "Pablo Picasso"
+    ],
+    "correctOption": "Leonardo da Vinci"
+  },
+  {
+    "question": "Qual é o esporte mais popular do mundo em termos de número de espectadores?",
+    "options": [
+      "Baseboll",
+      "Tênis",
+      "Golfe",
+      "Críquete",
+      "Basquetebol",
+      "Futebol"
+    ],
+    "correctOption": "Futebol"
+  },
+  {
+    "question": "Qual é a empresa fundada por Elon Musk que fabrica carros elétricos?",
+    "options": [
+      "Apple",
+      "Facebook",
+      "Tesla",
+      "Amazon",
+      "Google",
+      "SpaceX"
+    ],
+    "correctOption": "Tesla"
+  },
+  {
+    "question": "Qual é a maior lua de Saturno?",
+    "options": [
+      "Titã",
+      "Europa",
+      "Encélado",
+      "Mimas",
+      "Io",
+      "Terra"
+    ],
+    "correctOption": "Titã"
+  },
+  {
+    "question": "Em que ano a Segunda Guerra Mundial começou?",
+    "options": [
+      "1945",
+      "1937",
+      "1957",
+      "1942",
+      "1939",
+      "1941"
+    ],
+    "correctOption": "1939"
+  },
+  {
+    "question": "Quantos jogadores compõem uma equipe de vôlei em quadra?",
+    "options": [
+      "8",
+      "5",
+      "1",
+      "6",
+      "7",
+      "4"
+    ],
+    "correctOption": "6"
+  },
+  {
+    "question": "Qual é o sistema operacional desenvolvido pela Apple para seus dispositivos móveis?",
+    "options": [
+      "Windows Phone",
+      "iOS",
+      "BlackBerry OS",
+      "Linux",
+      "Symbian",
+      "Android"
+    ],
+    "correctOption": "iOS"
+  },
+  {
+    "question": "Qual é a sigla para a tecnologia de comunicação sem fio de curto alcance que permite a troca de dados entre dispositivos próximos?",
+    "options": [
+      "GPS",
+      "LTE",
+      "HTML",
+      "Bluetooth",
+      "NFC",
+      "USB"
+    ],
+    "correctOption": "Bluetooth"
+  },
+  {
+    "question": "Qual empresa desenvolveu o sistema operacional Android?",
+    "options": [
+      "Apple",
+      "Microsoft",
+      "Google",
+      "Samsung",
+      "Sony",
+      "Amazon"
+    ],
+    "correctOption": "Google"
+  },
+  {
+    "question": "O que significa a sigla 'URL'?",
+    "options": [
+      "Unified Resource Locator",
+      "Universal Resource Locator",
+      "Uniform Remote Link",
+      "Universal Remote Link",
+      "Uniform Recovery Locator",
+      "Uniform Resource Locator"
+    ],
+    "correctOption": "Uniform Resource Locator"
+  },
+  {
+    "question": "Qual foi o primeiro computador pessoal comercialmente bem-sucedido?",
+    "options": [
+      "TRS-80",
+      "IBM PC",
+      "Commodore PET",
+      "Apple II",
+      "Apple IV",
+      "Altair 8800"
+    ],
+    "correctOption": "Apple II"
+  },
+  {
+    "question": "O que significa a sigla 'HTML'?",
+    "options": [
+      "Hyperlink Markup Language",
+      "Hypertext Markup Language",
+      "Hyperlink Transfer Markup Language",
+      "Hyperlink Text Markup Language",
+      "Hypertext Transfer Mode Language",
+      "Hypertext Mockup Language"
+    ],
+    "correctOption": "Hypertext Markup Language"
+  },
+  {
+    "question": "Quem foi o co-fundador da Microsoft junto com Bill Gates?",
+    "options": [
+      "Elon Musk",
+      "Paul Allen",
+      "Paul Walker",
+      "Steve Jobs",
+      "Larry Page",
+      "Steve Wozniak"
+    ],
+    "correctOption": "Paul Allen"
+  },
+  {
+    "question": "Qual é o termo utilizado para descrever um software malicioso projetado para danificar ou controlar computadores sem o consentimento do usuário?",
+    "options": [
+      "Vírus",
+      "Phishing",
+      "Adware",
+      "Malware",
+      "Spyware",
+      "Firewall"
+    ],
+    "correctOption": "Malware"
+  },
+  {
+    "question": "Qual é o nome do fundador e CEO do Facebook?",
+    "options": [
+      "Satya Nadella",
+      "Jack Dorsey",
+      "Mark Zuckerberg",
+      "Mark Ruffalo",
+      "Tim Cook",
+      "Jeff Bezos"
+    ],
+    "correctOption": "Mark Zuckerberg"
+  },
+  {
+    "question": "Qual é o nome do encanador italiano da Nintendo, que é o personagem principal de uma das franquias mais populares de videogame?",
+    "options": [
+      "Chan",
+      "Crash Bandicoot",
+      "Link",
+      "Master Chief",
+      "Mario",
+      "Sonic"
+    ],
+    "correctOption": "Mario"
+  },
+  {
+    "question": "Qual é o nome do jogo que se passa em um mundo aberto onde os jogadores podem explorar, construir estruturas e enfrentar monstros à noite?",
+    "options": [
+      "World of Warcraft",
+      "Terraria",
+      "The Legend of Zelda",
+      "Legonite",
+      "Fortnite",
+      "Minecraft"
+    ],
+    "correctOption": "Minecraft"
+  },
+  {
+    "question": "Qual é o nome da franquia de jogos de tiro em primeira pessoa que apresenta um soldado conhecido como 'Doom Slayer'?",
+    "options": [
+      "Halo",
+      "World of Warcraft",
+      "Battlefield",
+      "Doom",
+      "Call of Duty",
+      "Counter-Strike"
+    ],
+    "correctOption": "Doom"
+  },
+  {
+    "question": "Qual é o nome do estúdio de desenvolvimento de jogos responsável pela série 'The Witcher' e 'Cyberpunk 2077'?",
+    "options": [
+      "Naughty Dog",
+      "Rockstar Games",
+      "Bethesda Game Studios",
+      "Ubisoft",
+      "CD Projekt Red",
+      "Bethesda"
+    ],
+    "correctOption": "CD Projekt Red"
+  },
+  {
+    "question": "Qual é o nome do jogo de estratégia em tempo real da Blizzard Entertainment, que é um dos mais populares e influentes do gênero?",
+    "options": [
+      "Total War",
+      "StarCraft",
+      "StarField",
+      "Warcraft",
+      "Command & Conquer",
+      "Age of Empires"
+    ],
+    "correctOption": "StarCraft"
+  },
+  {
+    "question": "Qual é o nome do jogo de plataforma lançado pela Nintendo em 1985, que é um dos jogos mais vendidos e influentes de todos os tempos?",
+    "options": [
+      "Donkey Kong",
+      "Super Mario Cart",
+      "Pac-Man",
+      "Tetris",
+      "The Legend of Zelda",
+      "Super Mario Bros"
+    ],
+    "correctOption": "Super Mario Bros"
+  },
+  {
+    "question": "Qual é o nome do jogo de RPG da Square Enix que apresenta uma história épica sobre a luta entre a luz e a escuridão, com personagens como Cloud Strife e Sephiroth?",
+    "options": [
+      "Final Fantasy VII",
+      "Kingdom Hearts",
+      "Persona 5",
+      "Dark Souls",
+      "Final Fantasy XV",
+      "The Elder Scrolls V: Skyrim"
+    ],
+    "correctOption": "Final Fantasy VII"
+  },
+  {
+    "question": "Qual é o nome do jogo de battle royale desenvolvido pela Epic Games, que se tornou um fenômeno cultural com milhões de jogadores em todo o mundo?",
+    "options": [
+      "Free Fire",
+      "Apex Legends",
+      "Call of Duty: Warzone",
+      "Minecraft",
+      "Fortnite",
+      "PUBG"
+    ],
+    "correctOption": "Fortnite"
+  },
+  {
+    "question": "Qual é o nome da série de jogos de ação-aventura da Naughty Dog que apresenta os personagens Nathan Drake e Ellie?",
+    "options": [
+      "FarCry",
+      "The Last of Us",
+      "God of War",
+      "Uncharted",
+      "Horizon Zero Dawn",
+      "Spider-Man"
+    ],
+    "correctOption": "Uncharted"
+  },
+  {
+    "question": "Qual é o nome do jogo de simulação de vida desenvolvido pela Maxis e publicado pela Electronic Arts, onde os jogadores controlam a vida virtual de personagens chamados 'Sims'?",
+    "options": [
+      "Clash of Clans",
+      "Stardew Valley",
+      "Animal Crossing",
+      "The Sims",
+      "Harvest Moon",
+      "SimCity"
+    ],
+    "correctOption": "The Sims"
+  },
+  {
+    "question": "Qual é o nome do estúdio responsável pelo desenvolvimento da série de jogos 'The Elder Scrolls'?",
+    "options": [
+      "BioWare",
+      "Square Enix",
+      "Bethesda Game Studios",
+      "Capcom",
+      "Bungie",
+      "Naughty Dog"
+    ],
+    "correctOption": "Bethesda Game Studios"
+  },
+  {
+    "question": "Qual é o nome do protagonista da série de jogos 'Uncharted', desenvolvida pela Naughty Dog?",
+    "options": [
+      "John Marston",
+      "Sam Fisher",
+      "Nathan Drake",
+      "Cloe",
+      "Joel",
+      "Solid Snake"
+    ],
+    "correctOption": "Nathan Drake"
+  },
+  {
+    "question": "Qual é o nome do estúdio que desenvolveu o jogo 'The Last of Us'?",
+    "options": [
+      "Sucker Punch Productions",
+      "Epic Games",
+      "Guerrilla Games",
+      "Naughty Dog",
+      "Santa Monica Studio",
+      "Media Molecule"
+    ],
+    "correctOption": "Naughty Dog"
+  },
+  {
+    "question": "Em qual cidade fictícia se passa o jogo 'GTA: San Andreas'?",
+    "options": [
+      "Los Santos",
+      "Vice City",
+      "Las Venturas",
+      "Las Venturas",
+      "San Fierro",
+      "Liberty City"
+    ],
+    "correctOption": "Los Santos"
+  },
+  {
+    "question": "Qual é o nome do personagem principal da série de jogos 'God of War'?",
+    "options": [
+      "Zeus",
+      "Hades",
+      "Klaiton",
+      "Kratos",
+      "Ares",
+      "Poseidon"
+    ],
+    "correctOption": "Kratos"
+  },
+  {
+    "question": "Qual é o nome do estúdio que desenvolveu o jogo 'Red Dead Redemption 2'?",
+    "options": [
+      "Epic Games",
+      "CD Projekt Red",
+      "Rockstar Games",
+      "Riot Games",
+      "BioWare",
+      "Ubisoft"
+    ],
+    "correctOption": "Rockstar Games"
+  },
+  {
+    "question": "Qual é o nome do planeta natal do personagem Master Chief da série 'Halo'?",
+    "options": [
+      "Installation 04",
+      "Reach",
+      "Sanghelios",
+      "Zeta Halo",
+      "Earth",
+      "Litch"
+    ],
+    "correctOption": "Reach"
+  },
+  {
+    "question": "Qual é o nome do estúdio que desenvolveu o jogo 'Cyberpunk 2077'?",
+    "options": [
+      "CD Projekt Red",
+      "Bethesda Game Studios",
+      "Naughty Dog",
+      "Rockstar Games",
+      "CD Projekt Yellow",
+      "Square Enix"
+    ],
+    "correctOption": "CD Projekt Red"
+  },
+  {
+    "question": "Qual é o nome do vilão principal da série de jogos 'The Legend of Zelda'?",
+    "options": [
+      "Ganon",
+      "Vaati",
+      "Gengo",
+      "Demise",
+      "Yuga",
+      "Zant"
+    ],
+    "correctOption": "Ganon"
+  },
+  {
+    "question": "Qual é o nome do personagem que é o protagonista da série de jogos 'Persona'?",
+    "options": [
+      "Thresh",
+      "Yusuke Kitagawa",
+      "Futaba Sakura",
+      "Joker",
+      "Makoto Niijima",
+      "Ryuji Sakamoto"
+    ],
+    "correctOption": "Joker"
+  },
+  {
+    "question": "Qual é o nome do jogo que popularizou o gênero battle royale e foi desenvolvido pelo estúdio Epic Games?",
+    "options": [
+      "Valorant",
+      "Apex Legends",
+      "PUBG",
+      "Fortnite",
+      "World of Warcraft",
+      "Call of Duty: Warzone"
+    ],
+    "correctOption": "Fortnite"
+  },
+  {
+    "question": "Em qual jogo da franquia 'Super Smash Bros.' o personagem Sonic the Hedgehog faz sua estreia como personagem jogável?",
+    "options": [
+      "Super Smash Bros. Ultimate",
+      "Super Smash Bros. Melee",
+      "Super Smash Bros. for Nintendo 3DS and Wii U",
+      "Super Smash Bros.",
+      "Super Smash Bros. Brawl",
+      "Super Mario Cart"
+    ],
+    "correctOption": "Super Smash Bros. Brawl"
+  },
+  {
+    "question": "Qual é o nome do protagonista do jogo 'Half-Life'?",
+    "options": [
+      "Dr. Isaac Kleiner",
+      "Barney Calhoun",
+      "Gordon Freeman",
+      "Alyx Vance",
+      "Morgan Freeman",
+      "Eli Vance"
+    ],
+    "correctOption": "Gordon Freeman"
+  },
+  {
+    "question": "Qual é o nome do estúdio responsável pelo desenvolvimento da série de jogos 'Dark Souls'?",
+    "options": [
+      "Capcom",
+      "Naughty Dog",
+      "Blizzard",
+      "Square Enix",
+      "FromSoftware",
+      "Bethesda Game Studios"
+    ],
+    "correctOption": "FromSoftware"
+  },
+  {
+    "question": "Qual é o nome do estúdio que desenvolveu o jogo 'The Witcher 3: Wild Hunt'?",
+    "options": [
+      "Square Enix",
+      "Naughty Dog",
+      "CD Projekt Red",
+      "Ubisoft",
+      "Blizzard",
+      "Rockstar Games"
+    ],
+    "correctOption": "CD Projekt Red"
+  },
+  {
+    "question": "Qual é o nome do protagonista do jogo 'The Legend of Zelda: Breath of the Wild'?",
+    "options": [
+      "Kratos",
+      "Link",
+      "Ganondorf",
+      "Impa",
+      "Mipha",
+      "Zelda"
+    ],
+    "correctOption": "Link"
+  },
+  {
+    "question": "Em que ano foi lançado o jogo 'Super Mario Bros.' para o console Nintendo Entertainment System (NES)?",
+    "options": [
+      "1983",
+      "1989",
+      "2024",
+      "1987",
+      "1991",
+      "1985"
+    ],
+    "correctOption": "1985"
+  },
+  {
+    "question": "Qual é o nome do protagonista da série de jogos 'Final Fantasy VII'?",
+    "options": [
+      "Tidus",
+      "Noctis Lucis Caelum",
+      "Squall Leonhart",
+      "Cloud Strife",
+      "Steve",
+      "Zidane Tribal"
+    ],
+    "correctOption": "Cloud Strife"
+  },
+  {
+    "question": "Qual é o nome do campeonato mundial anual de League of Legends organizado pela Riot Games?",
+    "options": [
+      "League of Legends (LPL)",
+      "League of Legends (Worlds)",
+      "League of Legends (LCK)",
+      "League of Legends (MSI)",
+      "League of Legends (CBLOL)",
+      "League of Legends (LCS)"
+    ],
+    "correctOption": "League of Legends (Worlds)"
+  },
+  {
+    "question": "Qual é o nome da região fictícia em que se passa a maior parte do lore de League of Legends?",
+    "options": [
+      "Noxus",
+      "Demacia",
+      "Ionia",
+      "Runeterra",
+      "Piltover",
+      "ShadowLands"
+    ],
+    "correctOption": "Runeterra"
+  }
+]

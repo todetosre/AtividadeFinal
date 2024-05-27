@@ -8,9 +8,34 @@
 </head>
 <body>
   <h1 style="text-align: center">QUIZ DO ZEQUINHA</h1>
+  <div id="welcomeMessage" style="text-align: center"></div>
+  <div id="waitingMessage" style="text-align: center"></div>
+  <div id="playerList" style="text-align: center"></div>
   <div id="messages" style="text-align: center"></div>
-  <script src="script.js"></script>
-  <div class="jogador"></div>
+  <div class="jogador">
+    <div class="progress-bar" style="display: none;"></div>
+    <div class="quiz" style="display: none;">
+        <div class="question"></div>
+        <div class="options"></div>
+    </div>
+  </div>
   <div class="placar"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const username = localStorage.getItem('username');
+      if (!username) {
+        window.location.href = 'entrada.html';
+      } else {
+        document.getElementById('welcomeMessage').innerText = `Bem-vindo, ${username}!`;
+      }
+    });
+
+    window.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        localStorage.removeItem('username');
+      }
+    });
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>

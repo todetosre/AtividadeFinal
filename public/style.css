@@ -1,9 +1,10 @@
-html{
+html {
     scroll-behavior: smooth;
-    background: url(../public/CSS/background.png), linear-gradient(to right, rgba(0, 126, 174, .85), rgba(26, 193, 187, .85)); 
+    background: url('CSS/background.png'), linear-gradient(to right, rgba(0, 126, 174, .85), rgba(26, 193, 187, .85));
 }
 
-.jogador{
+/* Quiz */
+.jogador {
     position: absolute;
     top: 150px;
     left: 485px;
@@ -12,9 +13,100 @@ html{
     background-color: #ffff;
     border-radius: 1%;
     border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 60px;
+    justify-content: flex-start;
+    overflow: hidden;
 }
 
-.placar{
+.jogador {
+    position: relative;
+    text-align: center;
+}
+  
+.jogador h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Timer */
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: green;
+    animation: progressWidth 30s linear forwards, progressColor 30s linear forwards;
+}
+
+@keyframes progressWidth {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+@keyframes progressColor {
+    0% {
+        background-color: green;
+    }
+    50% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+.quiz {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: space-between;
+}
+
+.question {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.options button {
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.options button:hover {
+    background-color: #ddd;
+}
+
+/* Placar */
+.placar {
     position: absolute;
     top: 150px;
     left: 950px;
@@ -23,4 +115,14 @@ html{
     background-color: #ffff;
     border-radius: 1%;
     border: 2px solid black;
+}
+
+.options button.correct {
+    background-color: green;
+    color: white;
+}
+
+.options button.incorrect {
+    background-color: red;
+    color: white;
 }
