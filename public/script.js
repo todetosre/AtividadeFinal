@@ -3,6 +3,13 @@ let score = 0;
 const username = localStorage.getItem('username') || 'Anônimo';
 let timerInterval;
 
+const newGameButton = document.getElementById('newGameButton');
+const newGameButtonContainer = document.getElementById('newGameButtonContainer');
+
+newGameButton.addEventListener('click', () => {
+  ws.send(JSON.stringify({ type: 'readyForNewGame', username: username }));
+});
+
 ws.onopen = () => {
   console.log('Conectado ao servidor WebSocket');
   ws.send(JSON.stringify({ type: 'connection', username: username }));
@@ -15,7 +22,7 @@ ws.onmessage = (event) => {
   if (data.type === 'newQuestion') {
     resetProgressBar();
     displayQuestion(data.question);
-    document.querySelector('.progress-bar').style.display = 'block'; // Mostrar barra de progresso
+    document.querySelector('.progress-bar').style.display = 'block';
   }
 
   if (data.type === 'updateUserList') {
@@ -25,6 +32,11 @@ ws.onmessage = (event) => {
   if (data.type === 'endGame') {
     displayEndGameMessage(data.highestScorer);
   }
+
+  if (data.type === 'newGame') {
+    hideNewGameButton();
+    startGame();
+  }
 };
 
 function displayEndGameMessage(highestScorer) {
@@ -33,36 +45,22 @@ function displayEndGameMessage(highestScorer) {
   jogadorDiv.style.display = 'block';
   document.querySelector('.quiz').style.display = 'none';
   document.querySelector('.progress-bar').style.display = 'none';
+
+  showNewGameButton();
 }
 
-
-function updateUserList(users) {
-  const placar = document.querySelector('.placar');
-  const playerList = document.querySelector('#playerList');
-  
-  placar.innerHTML = '';
-  playerList.innerHTML = '';
-
-  users.forEach(user => {
-    const userElement = document.createElement('div');
-    userElement.innerText = `${user.username}: ${user.score} pontos`;
-    placar.appendChild(userElement);
-    playerList.appendChild(userElement.cloneNode(true)); // Clone to use same style
-  });
-
-  if (users.length < 2) {
-    document.querySelector('.quiz').style.display = 'none';
-    document.getElementById('waitingMessage').innerText = 'Aguardando mais jogadores...';
-    document.querySelector('.progress-bar').style.display = 'none'; // Esconder barra de progresso
-  } else {
-    document.querySelector('.quiz').style.display = 'block';
-    document.getElementById('waitingMessage').innerText = '';
-  }
+function showNewGameButton() {
+  newGameButtonContainer.style.display = 'block';
 }
 
-ws.onclose = () => {
-  console.log('Desconectado do servidor WebSocket');
-};
+function hideNewGameButton() {
+  newGameButtonContainer.style.display = 'none';
+}
+
+function startGame() {
+  score = 0;
+  ws.send(JSON.stringify({ type: 'nextQuestion' }));
+}
 
 function updateUserList(users) {
   const placar = document.querySelector('.placar');
@@ -85,7 +83,6 @@ function updateUserList(users) {
     document.getElementById('waitingMessage').innerText = '';
   }
 }
-
 
 function displayQuestion(question) {
   document.querySelector('.question').innerText = question.question;
@@ -128,7 +125,6 @@ function checkAnswer(question, selectedOption, button) {
     ws.send(JSON.stringify({ type: 'endGame', highestScorer: username }));
   }
 }
-
 
 function updateUserScore() {
   const userElement = document.querySelector('.placar div');

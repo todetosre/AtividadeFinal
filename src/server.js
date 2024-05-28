@@ -27,8 +27,8 @@ wss.on('connection', (ws) => {
     const data = JSON.parse(message);
     if (data.type === 'connection') {
       username = data.username;
-      connectedUsers[username] = { ws, score: 0 };
-      console.log(`${username} entrou no quiz.`);  // Loga a entrada do jogador
+      connectedUsers[username] = { ws, score: 0, readyForNewGame: false };
+      console.log(`${username} entrou no quiz.`);
       broadcastUserList();
 
       if (Object.keys(connectedUsers).length >= 2 && !gameStarted) {
@@ -49,11 +49,16 @@ wss.on('connection', (ws) => {
     if (data.type === 'endGame') {
       endGame();
     }
+
+    if (data.type === 'readyForNewGame') {
+      connectedUsers[username].readyForNewGame = true;
+      checkAllUsersReadyForNewGame();
+    }
   });
 
   ws.on('close', () => {
     if (username) {
-      console.log(`${username} saiu do quiz.`);  // Loga a saída do jogador
+      console.log(`${username} saiu do quiz.`);
       delete connectedUsers[username];
       broadcastUserList();
       if (Object.keys(connectedUsers).length < 2 && gameStarted) {
@@ -65,61 +70,85 @@ wss.on('connection', (ws) => {
 
 function startGame() {
   sendQuestionToAllClients();
-  questionInterval = setInterval(sendQuestionToAllClients, 30000); // 30 segundos por pergunta
+  questionInterval = setInterval(sendQuestionToAllClients, 30000);
 }
 
 function sendQuestionToAllClients() {
-  shuffle(questions);
-  currentQuestion = questions[Math.floor(Math.random() * questions.length)];
-  const message = JSON.stringify({ type: 'newQuestion', question: currentQuestion });
+  const question = getQuestion();
+  currentQuestion = question;
   for (const user in connectedUsers) {
-    connectedUsers[user].ws.send(message);
+    connectedUsers[user].ws.send(JSON.stringify({ type: 'newQuestion', question: question }));
+  }
+}
+
+function getQuestion() {
+  const rawData = fs.readFileSync(path.join(__dirname, './questions.json'));
+  const questions = JSON.parse(rawData);
+  const randomIndex = Math.floor(Math.random() * questions.length);
+  return questions[randomIndex];
+}
+
+function broadcastUserList() {
+  const users = Object.keys(connectedUsers).map((username) => {
+    return { username: username, score: connectedUsers[username].score };
+  });
+
+  for (const user in connectedUsers) {
+    connectedUsers[user].ws.send(JSON.stringify({ type: 'updateUserList', users: users }));
   }
 }
 
 function endGame() {
-  const highestScorer = Object.keys(connectedUsers).reduce((max, user) => {
-    return connectedUsers[user].score > connectedUsers[max].score ? user : max;
-  }, Object.keys(connectedUsers)[0]);
-
-  const endGameMessage = JSON.stringify({ type: 'endGame', highestScorer: highestScorer });
-  for (const user in connectedUsers) {
-    connectedUsers[user].ws.send(endGameMessage);
-  }
-  console.log(`${highestScorer} venceu o quiz!`);  // Loga o vencedor do jogo
   clearInterval(questionInterval);
-  resetGame();
+  gameStarted = false;
+
+  const highestScorer = getHighestScorer();
+  for (const user in connectedUsers) {
+    connectedUsers[user].ws.send(JSON.stringify({ type: 'endGame', highestScorer: highestScorer }));
+  }
+}
+
+function getHighestScorer() {
+  let highestScore = -1;
+  let highestScorer = null;
+  for (const user in connectedUsers) {
+    if (connectedUsers[user].score > highestScore) {
+      highestScore = connectedUsers[user].score;
+      highestScorer = user;
+    }
+  }
+  return highestScorer;
+}
+
+function checkAllUsersReadyForNewGame() {
+  let allReady = true;
+  for (const user in connectedUsers) {
+    if (!connectedUsers[user].readyForNewGame) {
+      allReady = false;
+      break;
+    }
+  }
+
+  if (allReady) {
+    resetGame();
+    gameStarted = true;
+    startGame();
+    for (const user in connectedUsers) {
+      connectedUsers[user].ws.send(JSON.stringify({ type: 'newGame' }));
+    }
+  }
 }
 
 function resetGame() {
-  gameStarted = false;
   currentQuestion = null;
   for (const user in connectedUsers) {
     connectedUsers[user].score = 0;
+    connectedUsers[user].readyForNewGame = false;
   }
   broadcastUserList();
 }
 
-const questions = JSON.parse(fs.readFileSync(path.join(__dirname, 'questions.json'), 'utf8'));
-
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
-function broadcastUserList() {
-  const userList = Object.keys(connectedUsers).map(username => ({
-    username,
-    score: connectedUsers[username].score
-  }));
-  const message = JSON.stringify({ type: 'updateUserList', users: userList });
-  for (const user in connectedUsers) {
-    connectedUsers[user].ws.send(message);
-  }
-}
-
-server.listen(config.port, () => {
-  console.log(`Servidor rodando na porta ${config.port}`);
+const PORT = config.port;
+server.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
