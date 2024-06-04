@@ -45,7 +45,7 @@ html {
     width: 100%;
     height: 10px;
     background-color: green;
-    animation: progressWidth 30s linear forwards, progressColor 30s linear forwards;
+    animation: progressWidth 13s linear forwards, progressColor 13s linear forwards;
 }
 
 @keyframes progressWidth {

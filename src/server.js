@@ -54,6 +54,12 @@ wss.on('connection', (ws) => {
       connectedUsers[username].readyForNewGame = true;
       checkAllUsersReadyForNewGame();
     }
+
+    if (data.type === 'restartGame') {
+      console.log(`${username} reiniciou o jogo.`);
+      // Faça algo para reiniciar o jogo globalmente, mas não recarregue a página dos outros usuários
+      broadcastRestart(username);
+    }
   });
 
   ws.on('close', () => {
@@ -70,7 +76,7 @@ wss.on('connection', (ws) => {
 
 function startGame() {
   sendQuestionToAllClients();
-  questionInterval = setInterval(sendQuestionToAllClients, 30000);
+  questionInterval = setInterval(sendQuestionToAllClients, 15000);
 }
 
 function sendQuestionToAllClients() {
@@ -121,34 +127,20 @@ function getHighestScorer() {
 }
 
 function checkAllUsersReadyForNewGame() {
-  let allReady = true;
-  for (const user in connectedUsers) {
-    if (!connectedUsers[user].readyForNewGame) {
-      allReady = false;
-      break;
-    }
-  }
-
+  const allReady = Object.values(connectedUsers).every((user) => user.readyForNewGame);
   if (allReady) {
-    resetGame();
-    gameStarted = true;
     startGame();
-    for (const user in connectedUsers) {
+  }
+}
+
+function broadcastRestart(username) {
+  for (const user in connectedUsers) {
+    if (user !== username) {
       connectedUsers[user].ws.send(JSON.stringify({ type: 'newGame' }));
     }
   }
 }
 
-function resetGame() {
-  currentQuestion = null;
-  for (const user in connectedUsers) {
-    connectedUsers[user].score = 0;
-    connectedUsers[user].readyForNewGame = false;
-  }
-  broadcastUserList();
-}
-
-const PORT = config.port;
-server.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+server.listen(config.port, () => {
+  console.log(`Servidor rodando em http://localhost:${config.port}`);
 });

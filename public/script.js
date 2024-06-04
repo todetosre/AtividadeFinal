@@ -4,10 +4,14 @@ const username = localStorage.getItem('username') || 'Anônimo';
 let timerInterval;
 
 const newGameButton = document.getElementById('newGameButton');
-const newGameButtonContainer = document.getElementById('newGameButtonContainer');
 
 newGameButton.addEventListener('click', () => {
-  ws.send(JSON.stringify({ type: 'readyForNewGame', username: username }));
+  if (score >= 100) {
+    location.reload();  // Recarrega a página apenas para o usuário que clicou no botão
+    ws.send(JSON.stringify({ type: 'restartGame', username: username }));
+  } else {
+    ws.send(JSON.stringify({ type: 'readyForNewGame', username: username }));
+  }
 });
 
 ws.onopen = () => {
@@ -34,27 +38,18 @@ ws.onmessage = (event) => {
   }
 
   if (data.type === 'newGame') {
-    hideNewGameButton();
     startGame();
   }
+
+  // Remove a lógica de recarregar a página a partir do WebSocket
 };
 
 function displayEndGameMessage(highestScorer) {
-  const jogadorDiv = document.querySelector('.jogador');
+  const jogadorDiv = document.getElementById('jogador');
   jogadorDiv.innerHTML = `<h2>Parabéns, ${highestScorer}!</h2>`;
   jogadorDiv.style.display = 'block';
   document.querySelector('.quiz').style.display = 'none';
   document.querySelector('.progress-bar').style.display = 'none';
-
-  showNewGameButton();
-}
-
-function showNewGameButton() {
-  newGameButtonContainer.style.display = 'block';
-}
-
-function hideNewGameButton() {
-  newGameButtonContainer.style.display = 'none';
 }
 
 function startGame() {
@@ -132,7 +127,7 @@ function updateUserScore() {
 }
 
 function startTimer() {
-  let timeLeft = 30;
+  let timeLeft = 15;
   const timerElement = document.querySelector('.progress-bar');
   timerElement.style.width = '100%';
   timerElement.style.backgroundColor = 'green';
@@ -140,7 +135,7 @@ function startTimer() {
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
     timeLeft--;
-    timerElement.style.width = `${(timeLeft / 30) * 100}%`;
+    timerElement.style.width = `${(timeLeft / 15) * 100}%`;
     if (timeLeft <= 10) {
       timerElement.style.backgroundColor = 'red';
     } else if (timeLeft <= 20) {
